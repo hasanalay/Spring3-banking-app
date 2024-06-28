@@ -67,5 +67,11 @@ public class AccountController {
         return ResponseEntity.ok("The account with id:" +accountId+ " deleted successfully!");
     }
 
+    @PutMapping("{id}/sendMoney")
+    public ResponseEntity<AccountDto> sendMoney(@PathVariable("id") Long senderAccountId, @RequestBody Map<String, Object> request){
+        AccountDto account = accountService.sendMoney(senderAccountId, Long.valueOf(request.get("receiverAccountId").toString()), Double.valueOf(request.get("amount").toString()));
+        return ResponseEntity.ok(account);
+    }
+
     //endregion
 }

@@ -11,4 +11,6 @@ public interface IAccountService {
     AccountDto withdraw(Long accountId, Double amount);
     List<AccountDto> getAllAccounts();
     void deleteAccount(Long accountId);
+
+    AccountDto sendMoney(Long senderAccountId, Long receiverAccountId, Double amount);
 }

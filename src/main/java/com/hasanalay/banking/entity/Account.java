@@ -20,4 +20,9 @@ public class Account {
     @Column(name = "account_holder_name")
     private String accountHolderName;
     private Double balance;
+
+    @Column(name = "account_number")
+    private Integer accountNumber;
+    @Column(name = "has_extra_account")
+    private Boolean hasExtraAcc = false;
 }
